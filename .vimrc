@@ -28,6 +28,7 @@ filetype plugin indent on
 syntax enable
 set encoding=utf-8
 set showcmd
+set clipboard=unnamed
 
 "" Look
 set number

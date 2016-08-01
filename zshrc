@@ -40,3 +40,5 @@ compinit
 gpip(){
 	   PIP_REQUIRE_VIRTUALENV="" pip "$@"
    }
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
