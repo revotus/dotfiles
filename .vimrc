@@ -19,6 +19,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'ivanov/vim-ipython'
 
 " All of your Plugins must be added before the following line
 call vundle#end() 
@@ -44,7 +45,6 @@ set shiftwidth=4
 set expandtab
 set bs=2
 set textwidth=79
-set formatoptions+=t
 
 "" Search
 set hlsearch
@@ -56,6 +56,13 @@ set smartcase
 inoremap jk <Esc>
 map <Space> <leader>
 
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 "" Plugin Opts
 let g:pymode_rope_completion = 0
 let g:pymode_rope_completion_on_dot = 0
+let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint', 'pep257']

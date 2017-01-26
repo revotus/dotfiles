@@ -13,8 +13,7 @@ fi
 # Customize to your needs...
 
 if [[ "$OSTYPE" == darwin* ]]; then
-    # source /usr/local/bin/virtualenvwrapper.sh
-    source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+    source $HOME/anaconda2/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
     source /usr/local/opt/autoenv/activate.sh
     
     
@@ -24,21 +23,14 @@ if [[ "$OSTYPE" == darwin* ]]; then
     alias grep="grep --color=always"
     alias egrep="egrep --color=always"
 else
-    # source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
     source /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
     source /usr/local/bin/activate.sh
 fi
 
-source /usr/local/opt/condawrapper/condawrapper.sh
-# source /usr/local/opt/condawrapper/condawrapper_completion.bash
-
 eval `dircolors ~/.dircolors`
 zstyle ':completion:*:default' list-colors "${(@s.:.)LS_COLORS}"
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
 
-gpip(){
-	   PIP_REQUIRE_VIRTUALENV="" pip "$@"
-   }
+source $HOME/anaconda2/bin/virtualenvwrapper.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
