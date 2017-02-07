@@ -13,9 +13,9 @@ fi
 # export PIP_REQUIRE_VIRTUALENV=true
 # export WORKON_HOME=$HOME/.virtualenvs
 # export PROJECT_HOME=$HOME/Projects
-export PATH="$HOME/miniconda2/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
-export MANPATH="$HOME/miniconda/share/man:/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export PYTHONPATH="${PYTHONPATH}:$HOME/Projects:$HOME/Projects/predictive/"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export PYTHONPATH="${PYTHONPATH}:$HOME/Projects"
 export PROJECT_HOME="$HOME/Projects"
 
 # Set architecture flags
