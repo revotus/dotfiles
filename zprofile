@@ -33,7 +33,6 @@ fi
 #
 # Paths
 #
-
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
@@ -43,12 +42,10 @@ typeset -gU cdpath fpath mailpath path
 # )
 
 # Set the list of directories that Zsh searches for programs.
-path=(
-  /Users/matthew_benak/anaconda2/bin
-  /usr/local/opt/coreutils/libexec/gnubin
-  /usr/local/{bin,sbin}
-  $path
-)
+# path=(
+#   /usr/local/{bin,sbin}
+#   $path
+# )
 
 #
 # Less
