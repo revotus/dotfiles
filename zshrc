@@ -31,6 +31,6 @@ eval `dircolors ~/.dircolors`
 zstyle ':completion:*:default' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit && compinit
 
-source $HOME/anaconda2/bin/virtualenvwrapper.sh
+# source $HOME/anaconda2/bin/virtualenvwrapper.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
