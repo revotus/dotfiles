@@ -14,6 +14,7 @@ export PATH="$HOME/anaconda2/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/lo
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PYTHONPATH="${PYTHONPATH}:$HOME/Projects"
 export PROJECT_HOME="$HOME/Projects"
+export PYTHONDONTWRITEBYTECODE=1
 
 # Set architecture flags
 if [[ "$OSTYPE" == darwin* ]]; then

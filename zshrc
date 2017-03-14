@@ -27,6 +27,8 @@ else
     source /usr/local/bin/activate.sh
 fi
 
+alias workon="source activate"
+
 eval `dircolors ~/.dircolors`
 zstyle ':completion:*:default' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit && compinit
