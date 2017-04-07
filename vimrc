@@ -77,12 +77,13 @@ nnoremap <C-H> <C-W><C-H>
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_python_binery_path = 'python'
-map <leader>g  :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>h :YcmCompleter GoTo<CR>
+nnoremap <leader>g  :YcmCompleter GoToDefinition<CR>
 
 " Syntastic
 let g:syntastic_python_checkers = ['python', 'pylint', 'pylama', 'pk3kwarn']
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_aggregate_errors = 1
+" let g:syntastic_aggregate_errors = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
@@ -91,6 +92,6 @@ let g:syntastic_python_pylama_args = "-o ~/.config/pylama.ini"
 
 " SimplyFold
 let g:SimpylFold_docstring_preview=1
-"
+
 " Conda
 let g:conda_startup_msg_suppress = 1
