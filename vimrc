@@ -76,7 +76,7 @@ nnoremap <C-H> <C-W><C-H>
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_python_binery_path = 'python'
+let g:ycm_python_binary_path = 'python'
 nnoremap <leader>h :YcmCompleter GoTo<CR>
 nnoremap <leader>g  :YcmCompleter GoToDefinition<CR>
 
