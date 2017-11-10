@@ -13,8 +13,7 @@ fi
 # Customize to your needs...
 
 if [[ "$OSTYPE" == darwin* ]]; then
-    source /usr/local/opt/autoenv/activate.sh
-    
+    eval "$(direnv hook zsh)"   
     
     export CLICOLOR=1
     
@@ -22,7 +21,6 @@ if [[ "$OSTYPE" == darwin* ]]; then
     alias grep="grep --color=always"
     alias egrep="egrep --color=always"
 else
-    source /usr/local/bin/activate.sh
 fi
 
 powerline_path=$(python -c 'import pkgutil; print pkgutil.get_loader("powerline").filename' 2>/dev/null)
