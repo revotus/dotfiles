@@ -122,7 +122,11 @@
 				"before": ":",
 				"width": 3,
 				"align": "l"
-			}
+			},
+            {
+                "function": "bufnr",
+                "prioity": 100
+            }
 		]
 	}
 }
