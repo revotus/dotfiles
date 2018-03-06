@@ -1,5 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'dag/vim-fish'
 Plug 'altercation/vim-colors-solarized'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'tpope/vim-fugitive'
@@ -13,5 +14,10 @@ Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 imap jk <Esc>
+map <Space> <leader>
+
+set expandtab
+set shiftwidth=4
+set softtabstop=4
 
 let g:airline_theme='solarized'
