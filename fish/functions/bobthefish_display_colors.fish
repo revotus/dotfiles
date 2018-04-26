@@ -1,0 +1,1 @@
+/Users/matthew_benak/.config/fisherman/bobthefish/functions/bobthefish_display_colors.fish

@@ -1,0 +1,1 @@
+/Users/matthew_benak/.config/fisherman/bobthefish/fish_prompt.fish

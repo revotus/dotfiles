@@ -1,0 +1,1 @@
+/Users/matthew_benak/.config/fisherman/pipenv/conf.d/pipenv.fish
