@@ -1,4 +1,4 @@
-if which pipenv
+if which pipenv > /dev/null
     eval (pipenv --completion)
 end
 
@@ -13,4 +13,4 @@ set -g theme_color_scheme solarized-dark
 set -g VIRTUAL_ENV_DISABLE_PROMPT 1
 
 set -x GARCTL_REGION us-east-1
-set -x PYTHONDONTWRITEBYTECODE 
+set -x PYTHONDONTWRITEBYTECODE 1
