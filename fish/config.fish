@@ -1,16 +1,23 @@
-if command -s pipenv > /dev/null
-    eval (pipenv --completion)
+#!/usr/bin/env fish
+
+if command -sq pipenv
+    set pipenv_fish_fancy yes
 end
 
-switch (uname)
-    case Linux
-        eval (dircolors -c $HOME/.config/dircolors/dircolors.ansi-dark)
-    case Darwin
-        eval (gdircolors -c $HOME/.config/dircolors/dircolors.ansi-dark)
+if set colorfuncs (command -s dircolors gdircolors)
+    set colorsfile $HOME/.config/dircolors/dircolors.ansi-dark
+    $colorfuncs[1] -c $colorsfile > /dev/null
 end
 
-set -g theme_color_scheme solarized-dark
-set -g VIRTUAL_ENV_DISABLE_PROMPT 1
+set theme_color_scheme solarized-dark
+
+set VIRTUAL_ENV_DISABLE_PROMPT 1
 
 set -x GARCTL_REGION us-east-1
 set -x PYTHONDONTWRITEBYTECODE 1
+
+if not functions -q fisher
+    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+    fish -c fisher
+end

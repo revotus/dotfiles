@@ -11,7 +11,6 @@ Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plug 'cjrh/vim-conda'
 Plug 'elzr/vim-json'
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
@@ -64,7 +63,6 @@ set smartcase
 " Remap
 inoremap jk <Esc>
 map <Space> <leader>
-nnoremap <F4> :CondaChangeEnv<CR>
 nnoremap <F5> :GundoToggle<CR>
 
 " Split Navigations
@@ -92,6 +90,3 @@ let g:syntastic_python_pylama_args = "-o ~/.config/pylama.ini"
 
 " SimplyFold
 let g:SimpylFold_docstring_preview=1
-
-" Conda
-let g:conda_startup_msg_suppress = 1
