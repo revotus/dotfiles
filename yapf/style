@@ -1,1 +1,2 @@
-/Users/matthew_benak/.config/yapf.ini
+[style]
+based_on_style = google
