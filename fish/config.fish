@@ -1,9 +1,5 @@
 #!/usr/bin/env fish
 
-if command -sq pipenv
-    set pipenv_fish_fancy yes
-end
-
 if set colorfuncs (command -s dircolors gdircolors)
     set colorsfile $HOME/.config/dircolors/dircolors.ansi-dark
     $colorfuncs[1] -c $colorsfile > /dev/null
