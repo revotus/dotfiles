@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
-call plug#begin('~/.vim/plugged')
+
+call plug#begin()
 
 Plug 'altercation/vim-colors-solarized'
 Plug 'jlanzarotta/bufexplorer'
