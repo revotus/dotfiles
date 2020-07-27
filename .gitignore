@@ -125,3 +125,7 @@ pip-selfcheck.json
 
 # Mac .DS_Store
 .DS_Store
+
+# nvim downloads
+nvim/plugged
+nvim/site
