@@ -107,7 +107,7 @@ data/
 *.db
 
 # SublimeText project files
-*.sublime*
+#*.sublime*
 
 # env files
 .env
