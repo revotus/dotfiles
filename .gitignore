@@ -129,3 +129,6 @@ pip-selfcheck.json
 # nvim downloads
 nvim/plugged
 nvim/site
+
+# Fish vars
+fish/fish_variables
