@@ -7,12 +7,12 @@ endif
 call plug#begin()
 
 Plug 'dag/vim-fish'
-Plug 'altercation/vim-colors-solarized'
+Plug 'iCyMind/NeoSolarized'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-syntastic/syntastic'
@@ -26,6 +26,8 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 
+set termguicolors
+colorscheme NeoSolarized
 set colorcolumn=79
 
 let g:airline_theme='solarized'

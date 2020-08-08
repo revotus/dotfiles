@@ -12,6 +12,11 @@ set VIRTUAL_ENV_DISABLE_PROMPT 1
 set -x GARCTL_REGION us-east-1
 set -x PYTHONDONTWRITEBYTECODE 1
 
+switch (uname)
+    case Darwin
+        set fish_user_paths /usr/local/opt/gnu-sed/libexec/gnubin $fish_user_paths
+end
+
 if not functions -q fisher
     set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
