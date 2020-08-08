@@ -2,7 +2,7 @@ set nocompatible              " be iMproved, required
 
 call plug#begin()
 
-Plug 'altercation/vim-colors-solarized'
+Plug 'iCyMind/NeoSolarized'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
@@ -34,7 +34,7 @@ set title
 set number
 set ruler
 " set cursorline
-colorscheme solarized
+colorscheme Neosolarized
 set background=dark
 call togglebg#map("<F6>")
 set laststatus=2
