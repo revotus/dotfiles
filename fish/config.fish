@@ -15,6 +15,8 @@ set -x PYTHONDONTWRITEBYTECODE 1
 switch (uname)
     case Darwin
         set fish_user_paths /usr/local/opt/gnu-sed/libexec/gnubin $fish_user_paths
+    case Linux
+        set fish_user_paths /snap/bin $fish_user_paths
 end
 
 if not functions -q fisher
