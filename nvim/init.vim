@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 if empty(glob(stdpath("data") . "/site/autoload/plug.vim"))
   silent !sh -c 'curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-              \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-=======
-if empty(glob('~/.config/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/site/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
->>>>>>> 23d5dea6e0a093128dc18947d82fda4e7c85590b
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source ~/.config/nvim/init.vim
 endif
 
@@ -37,11 +31,6 @@ set background=dark
 set termguicolors
 let g:neosolarized_contrast = "low"
 colorscheme NeoSolarized
-<<<<<<< HEAD
-=======
-set colorcolumn=79
-set background=dark
->>>>>>> 23d5dea6e0a093128dc18947d82fda4e7c85590b
 
 let g:airline_theme='solarized'
 
