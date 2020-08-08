@@ -1,13 +1,13 @@
-if empty(glob('~/.config/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/site/autoload/plug.vim --create-dirs \ 
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if empty(glob(stdpath("data") . "/site/autoload/plug.vim"))
+  silent !sh -c 'curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+              \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source ~/.config/nvim/init.vim
 endif
 
-call plug#begin()
+call plug#begin(stdpath("config") . '/plugged')
 
 Plug 'dag/vim-fish'
-Plug 'iCyMind/NeoSolarized'
+Plug 'overcache/NeoSolarized'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
@@ -26,9 +26,11 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 
-set termguicolors
-colorscheme NeoSolarized
 set colorcolumn=79
+set background=dark
+set termguicolors
+let g:neosolarized_contrast = "low"
+colorscheme NeoSolarized
 
 let g:airline_theme='solarized'
 
