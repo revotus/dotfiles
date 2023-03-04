@@ -9,7 +9,6 @@ set theme_color_scheme solarized-dark
 
 set VIRTUAL_ENV_DISABLE_PROMPT 1
 
-set -x GARCTL_REGION us-east-1
 set -x PYTHONDONTWRITEBYTECODE 1
 
 switch (uname)

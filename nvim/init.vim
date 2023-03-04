@@ -1,7 +1,7 @@
-if empty(glob(stdpath("data") . "/site/autoload/plug.vim"))
-  silent !sh -c 'curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source ~/.config/nvim/init.vim
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin(stdpath("config") . '/plugged')
@@ -12,7 +12,6 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-syntastic/syntastic'
@@ -29,10 +28,9 @@ set softtabstop=4
 set colorcolumn=79
 set background=dark
 set termguicolors
-let g:neosolarized_contrast = "low"
-colorscheme NeoSolarized
-
+"let g:neosolarized_contrast = "low"
 let g:airline_theme='solarized'
+colorscheme NeoSolarized
 
 " Syntastic
 let g:syntastic_python_checkers = ['python', 'pylint', 'pylama', 'pk3kwarn']
