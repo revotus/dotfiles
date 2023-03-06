@@ -8,7 +8,7 @@ endif
 
 call plug#begin()
 
-Plug 'iCyMind/NeoSolarized'
+Plug 'gilgigilgil/anderson.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
@@ -16,7 +16,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
-Plug 'Valloric/YouCompleteMe'
 Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plug 'elzr/vim-json'
 Plug 'tmhedberg/SimpylFold'
@@ -40,9 +39,7 @@ set title
 set number
 set ruler
 " set cursorline
-colorscheme Neosolarized
 set background=dark
-call togglebg#map("<F6>")
 set laststatus=2
 set colorcolumn=80
 let python_highlight_all=1
