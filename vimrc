@@ -43,6 +43,7 @@ set background=dark
 set laststatus=2
 set colorcolumn=80
 let python_highlight_all=1
+colorscheme anderson
 
 " Whitespace
 set textwidth=80

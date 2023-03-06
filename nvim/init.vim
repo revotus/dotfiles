@@ -6,14 +6,15 @@ endif
 
 call plug#begin(stdpath("config") . '/plugged')
 
+Plug 'gilgigilgil/anderson.vim'
 Plug 'dag/vim-fish'
-Plug 'overcache/NeoSolarized'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-surround'
+Plug 'kien/ctrlp.vim'
+Plug 'tmhedberg/SimpylFold'
 Plug 'vim-syntastic/syntastic'
 
 call plug#end()
@@ -28,9 +29,7 @@ set softtabstop=4
 set colorcolumn=79
 set background=dark
 set termguicolors
-"let g:neosolarized_contrast = "low"
-let g:airline_theme='solarized'
-colorscheme NeoSolarized
+colorscheme
 
 " Syntastic
 let g:syntastic_python_checkers = ['python', 'pylint', 'pylama', 'pk3kwarn']
