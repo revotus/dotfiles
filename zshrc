@@ -5,39 +5,157 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+### SALTBOX MANAGED BLOCK 1 - BEGIN ###
+# Oh-my-zsh - auto update zsh without prompt
+DISABLE_UPDATE_PROMPT=true
+### SALTBOX MANAGED BLOCK 1 - END ###
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Executes commands at the start of an interactive session.
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git docker docker-compose ansible)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
 #
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+### SALTBOX MANAGED BLOCK 2 - BEGIN ###
+# zsh - allows commmands to run with the un-expanded glob
+unsetopt nomatch
+# zsh - set TIMEFMT
+export TIMEFMT=$'
+real	%E
+user	%U
+sys	%S'
+# Editor
+export EDITOR=nano
+# Include Z
+. /opt/z/z.sh
+# Aliases
+alias lso="ls -alG | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\" %0o \",k);print}'"
+# Load compinit and bashcompinit
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+# OSC 1337 - Set current directory
+precmd () { echo -n "\x1b]1337;CurrentDir=$(pwd)\x07" }
+### SALTBOX MANAGED BLOCK 2 - END ###
 
-# Source Prezto.
-#if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-#  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-#fi
+### MY SALTY ###
+test -e "/src/git/saltbox" && export SEL=/srv/git/saltbox && alias csel="cd /srv/git/saltbox"
 
-# Customize to your needs...
+### ME ALL ME ###
+
 
 if [[ "$OSTYPE" == darwin* ]]; then
-    eval "$(direnv hook zsh)"   
-    
+    eval "$(direnv hook zsh)"
+
     export CLICOLOR=1
-    
-    alias ls="ls --color=always" 
+
+    alias ls="ls --color=always"
     alias grep="grep --color=always"
     alias egrep="egrep --color=always"
 else
 fi
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+test -e "${HOME}/powerlevel10k/powerlevel10k.zsh-theme" && source "${HOME}/powerlevel10k/powerlevel10k.zsh-theme"
 
 alias workon="source activate"
 
 bindkey -v
 bindkey 'jk' vi-cmd-mode
 
-eval `dircolors ~/.dircolors`
-zstyle ':completion:*:default' list-colors "${(@s.:.)LS_COLORS}"
+test -e "${HOME}/.dircolors" && eval `dircolors "${HOME}/.dircolors"` && zstyle ':completion:*:default' list-colors "${(@s.:.)LS_COLORS}"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -47,9 +165,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export EDITOR=/usr/bin/nvim
 
-DISABLE_UPDATE_PROMPT=true
-
-
 export HISTFILE=~/.histfile
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
@@ -58,15 +173,3 @@ export HISTTIMEFORMAT="[%F %T] "
 setopt INC_APPEND_HISTORY
 setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
-
-autoload -Uz compinit
-compinit -u
-autoload -Uz bashcompinit
-bashcompinit
-
-#unsetopt nomatch
-
-
-
-## Include Z
-. /opt/z/z.sh
