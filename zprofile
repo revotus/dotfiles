@@ -73,3 +73,5 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
+
+eval "$(/usr/local/bin/brew shellenv)"
