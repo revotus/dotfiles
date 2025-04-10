@@ -13,7 +13,7 @@ DISABLE_UPDATE_PROMPT=true
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+#export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -83,7 +83,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git docker docker-compose ansible)
 
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -119,9 +119,9 @@ real	%E
 user	%U
 sys	%S'
 # Editor
-export EDITOR=nano
+#export EDITOR=nano
 # Include Z
-. /opt/z/z.sh
+#. /opt/z/z.sh
 # Aliases
 alias lso="ls -alG | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\" %0o \",k);print}'"
 # Load compinit and bashcompinit
@@ -129,6 +129,8 @@ autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 # OSC 1337 - Set current directory
 precmd () { echo -n "\x1b]1337;CurrentDir=$(pwd)\x07" }
+# Case INsensitive Autocomplete
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 ### SALTBOX MANAGED BLOCK 2 - END ###
 
 ### MY SALTY ###
@@ -138,7 +140,7 @@ test -e "/src/git/saltbox" && export SEL=/srv/git/saltbox && alias csel="cd /srv
 
 
 if [[ "$OSTYPE" == darwin* ]]; then
-    eval "$(direnv hook zsh)"
+    #eval "$(direnv hook zsh)"
 
     export CLICOLOR=1
 
@@ -165,11 +167,16 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export EDITOR=/usr/bin/nvim
 
-export HISTFILE=~/.histfile
-export HISTFILESIZE=1000000000
-export HISTSIZE=1000000000
+export HISTFILE="${HOME}/.zhistory"
+export HISTSIZE=15000
+export SAVEHIST=10000
 export HISTTIMEFORMAT="[%F %T] "
-
 setopt INC_APPEND_HISTORY
 setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
+bindkey '\e[A' history-search-backward
+bindkey '\e[B' history-search-forward
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
