@@ -74,4 +74,4 @@ fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
 
-eval "$(/usr/local/bin/brew shellenv)"
+test -e "/usr/loca/bin/brew" && eval "$(/usr/local/bin/brew shellenv)"
